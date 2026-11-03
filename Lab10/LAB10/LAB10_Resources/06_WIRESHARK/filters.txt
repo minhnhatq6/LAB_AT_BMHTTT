@@ -1,0 +1,10 @@
+LAB 10 Wireshark display filters
+
+dns
+udp.port == 53
+ip.addr == 10.9.0.10 && udp.port == 33333
+dns.qry.name contains "example.lab10.test"
+ip.addr == 172.16.6.20 && ip.addr == 10.9.0.10
+ip.addr == 10.10.0.200 && udp.port == 53
+
+Expected: Kali ATTACKNET cannot sniff DNSLAB packets. Capture DNS-SERVER or APP-TEST to analyze the race.

@@ -1,0 +1,5 @@
+zone "example.lab10.test" {
+    type forward;
+    forward only;
+    forwarders { 172.16.6.20; };
+};

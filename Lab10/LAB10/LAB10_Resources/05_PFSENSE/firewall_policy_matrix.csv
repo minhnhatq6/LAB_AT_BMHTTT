@@ -1,0 +1,13 @@
+﻿Interface,Action,Source,Destination,Port,Purpose
+DNSLAB,Pass,10.9.0.100,10.9.0.10,TCP/UDP 53,Victim -> resolver
+DNSLAB,Pass,10.9.0.10,172.16.6.20,UDP 53,Resolver -> legitimate AUTH-DNS
+DNSLAB,Pass,10.9.0.10,10.10.0.200,UDP 53,After poison: resolver -> malicious NS
+DNSLAB,Pass,10.9.0.0/24,10.10.0.200,TCP 80,Victim verifies redirected web
+DNSLAB,Block+Log,10.9.0.0/24,10.6.0.0/24,Any,Protect LAB7/8 LAN
+DNSLAB,Block+Log,10.9.0.0/24,192.168.56.0/24,Any,Protect MGMT
+DNSLAB,Block+Log,10.9.0.0/24,Any,Any,Default isolation
+ATTACKNET,Pass,10.10.0.200,10.9.0.10,TCP/UDP 53,Remote attacker triggers resolver
+ATTACKNET,Pass,10.10.0.200,172.16.6.20,UDP 5300,Lab-only TXID race relay
+ATTACKNET,Block+Log,10.10.0.0/24,10.6.0.0/24,Any,Protect LAN
+ATTACKNET,Block+Log,10.10.0.0/24,192.168.56.0/24,Any,Protect MGMT
+ATTACKNET,Block+Log,10.10.0.0/24,Any,Any,No WAN / no unrelated DMZ

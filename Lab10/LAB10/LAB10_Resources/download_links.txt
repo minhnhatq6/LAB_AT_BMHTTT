@@ -1,0 +1,6 @@
+Nguon chinh thuc
+- Ubuntu Server 24.04: https://ubuntu.com/download/server
+- Kali Linux: https://www.kali.org/get-kali/
+- BIND 9 ARM: https://bind9.readthedocs.io/en/v9.18.50/
+- pfSense docs: https://docs.netgate.com/pfsense/en/latest/
+- RFC 2606 reserved .test: https://www.rfc-editor.org/rfc/rfc2606
